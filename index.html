@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--Путь к стилю страницы-->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!--Подключаем Font Awesome fontawesome.com -> Login -> Kit-->
+    <script
+      src="https://kit.fontawesome.com/bb867f31e9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Подключаем шрифт-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>My page</title>
+  </head>
+  <body>
+    <header>
+      <!--Структура заголовка -> div-ка с классом header, которая содержит в себе блок с лого
+		(div class=logo), div-ка с поиском (div class=search), div-ка с картинкой пользователя и его именем
+		(div class=user_nav)-->
+      <div class="header">
+        <div class="logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/250px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
+          />
+        </div>
+        <div class="search">
+          <div class="search_field">
+            <label for="search"
+              ><a href="#"><i class="fas fa-search"></i></a
+            ></label>
+            <input
+              type="text"
+              id="search"
+              name="search_field"
+              placeholder="Поиск"
+            />
+          </div>
+        </div>
+        <div class="user_nav">
+          <div class="user_name">Danil</div>
+          <div class="user_nav_image">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="user avatar"
+            />
+          </div>
+          <div class="user_nav_more">
+            <i class="fa-solid fa-chevron-down" style="color: black"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!--Структура нашей главной страницы состоит из трех главных блоков:
+	1) навигации (мои игры, приложения и т.д.)
+	2) основная информация с картинкой профиля
+	3) блок с подробностями профиля и с постами-->
+
+      <aside class="vertical_nav">
+        <!--Почему мы заворачиваем содержимое в отдельный div?
+		Так как aside у нас будет занимать всю длину, нам нужно разбить контент по блокам-->
+        <div class="vertical_nav_block">
+          <!--vertical nav block 1-->
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-user"></i>
+            <h4>Моя страница</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-newspaper"></i>
+            <h4>События</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-message"></i>
+            <h4>Телеграммы</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-address-book"></i>
+            <h4>
+              <a
+                href="#"
+                style="text-decoration: none; color: black; font-weight: normal"
+                >Джентльмены</a
+              >
+            </h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-brands fa-nfc-symbol"></i>
+            <h4>Собрания</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-image"></i>
+            <h4>Фотокарточки</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-file-audio"></i>
+            <h4>Музыкальные произведения</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-file-video"></i>
+            <h4>Видеозаписи</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-solid fa-film"></i>
+            <h4>Видеоклипы</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-chess-knight"></i>
+            <h4>Игры</h4>
+          </div>
+        </div>
+
+        <div class="vertical_nav_block">
+          <!--vertical nav block 2-->
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-money-bill-1"></i>
+            <h4>Оплата</h4>
+          </div>
+        </div>
+
+        <div class="vertical_nav_block">
+          <!--vertical nav block 3-->
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-credit-card"></i>
+            <h4>Магазин</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-star"></i>
+            <h4>Сохраненное</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-regular fa-file"></i>
+            <h4>Файлы</h4>
+          </div>
+          <div class="vertical_nav_block_item">
+            <i class="fa-solid fa-sliders"></i>
+            <h4>Управление</h4>
+          </div>
+        </div>
+
+        <div class="vertical_nav_block">
+          <!--vertical nav block 4-->
+        </div>
+      </aside>
+      <!--Закрываем aside навигацией, переходим к новому блоку с профилем-->
+
+      <!--Profile Data - это блок, который содержит в себе три блока: блок с карточкой профиля, блок с добавлением контактов,
+	блок с друзьями-->
+      <div class="profile_data">
+        <!--блок с карточкой профиля-->
+        <div class="profile_general">
+          <div class="profile_photo">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEA8QEBAQEA8QEBAQFg8QEA8PEBAQFRUWFhUVFhUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLzAtLS0vLS4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAQIEBQMGB//EAEUQAAEEAAMEBwUECAQFBQAAAAEAAgMRBBIhBTFBURMiYXGBkaEGFDLB0SNCUrEzYmNyorLC4UNzgvAVJGSS8TRTZXSD/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QALxEAAgIBAwIEBQQDAQEAAAAAAAECEQMSITFBUQQTYXEFgaGx8CKRwdEy4fEVFP/aAAwDAQACEQMRAD8A+kUmmhecbiRSaEAqRSkhARpFKSSAVIpNCAjSKUqQgI0ik0ICNJUppUoBFKlOkqQEaSIUikgIUilIhJARpIhSSKgEKSU6SKAgQlSmolARpCaEBoIQhWAITRSEAik0IBITQgIoUkEICKE6RSAgmpUkQhIklKlFAFITQoBFRpTSKAilSkQkoBGlEqaRQEVFSKRQEVFTUSgFSE0IC6mhNWIABCEIAQhCAEJopAJCdIpAJCkhARQU6SQCKipkKKEghOlFQASUkigIpKRSUAggplJARSKkQolAJJNIoBIQhAXUITViAQhNAATpCaAiXAbyAo9Mz8Q9AsrHykSEWR57lkYjF6EDNZ715s/iGmbjS2dcmihZ64a9qks/2fN4eO/1vLMVor0IS1QUu6soxLk7FRjfJGO97R81z2oHGCYNNOMb6Ooo0dbC+LmXqnr/AHvhOfXtW+PHqvc8/wAb41+HcUo3d9a4r0PtjMRG4017HHkHtJ9F0XxXZWJccRhACNJ4wCL0tw5r7WVGSGh8m3hfE+fFyqvnZErnJI1oLnENaN7nEADxK6lea9vmu90BaaAkBd2inD8yFkzvwYvNyxhdW6Nc7Tww/wAeHX9ozX1XaDFRyXkkjeRvyPa6vJfGnyG23Jeg0Iea7NAV6P2Elc7Hu1B/5d1nXVts+ZCqnZ6XiPhkcWNyUnsm91R9GSUyoqx5BxfMwGi5oI4FwBXM4uL/AN2P/vb9V5DaxcJpQcw6x10INnsNrMklcAQCTpqBv9SFy+e7rb91/Z60fhsXFO3v6M+jggixqDrY1BCFT2J/6aDj9k0+FaK4V0J2jy5rTJrsIqKkVEqSpEpIKRQmgQkhBRfQhCsVBSCQUkAJpKLzp2VZPZ9ToPFSlboHnNs7LbJiGO6FxbldcjZMtnSrGYWPiHn2KhJ7PRZX/YyF1dWpePi9enY0uzPI8tw5DuQGWaXSs8opJHNLBCTbZz9m4cmFhZkEb2xtD2A5qkAAdrfEi1pLPsxO13Hf9VornnzbOmPBxnYC1wIJBFU0kON8AQQbO5eUb7LwkPoSMt+jc+4ajQg7l6qd9eNgfkT8vE8lxLCALG8X4LXHklji6fJlkxxm1fQ8yPZ6KKXDSBsrsj+sekIyggjMDmzaWNy9iqnQ5gU8DLdsO9u7uUZZynTZOOChsiysv2gia+ItMPTHg38PM3YrlfaFqONa8lXmaScvHe7v4N8PzJVcdqWrsWlxR5F3s3Acv2D9wsZiCNf8zXRWvZzZkcOKmIhcwFjBHI6juLs7bzE/h07F6B7UYnCkMa4b6B7jwW8s05RcWZxxqLtWWklzw02doPHcRyI3pTvG7nv7uXjuXJpt0b2ebxuyo5JXn3d2WiA8PAznuzjS+Ky8f7P/AGEojw56Ujq3KKB7SXL2dE2Snh4g51HkuuPiJppL+f7Od4k7Zz2e1giYI2hjQ0dQAAMPEacl3KptuKTKfhea7jwPyVwrkkqZ0J2hKBUiolVJEVEqRUShIkIQgLwTQmFYoMJpJoBhYG2sWHPEWtDrmiRuJa3d3OP+pb4XkpI/+ZlJ5RjyaFpB0nJfm5WSukaOHP2eQFwBIJ6ztauvzVnBYQZgbf4ucVzhADSTuCs4OdrxmbwNEHeCieRrV0IehPT1K232sawEgu1r4n8fFQ2VtMDDyF2/Dggg76rq/RS28/qDsIKr+02Ha2PEvZoJYcI/TtedfRbqskafdfVozlcHqXZ/YqRS9O7pTv0AFnQD/Z81qyRdJRdejQ0DM4UBuG9ZuxYqjZzOq17AFncspylKbUe+xpGMYxt/MsYLBMAJo+LnfVYmLlbBOHNAFOonWy07xa3sHMC3Td81gbTgzzPHOOTzDSQtISakoP2ZSUYuOqPui37R7TbEGMs5ngvFdlUT2Wb/ANK5bPkyua9pcdAbLnG/VYXtQC6XB/r4eO/M/Vb+HZVDuSUnjxxUett/uIrVN36fYm7DBziS5+pug99fmtM4ZvRUc1Za+N1/ms+bFtjygi739g5rTz23mCPRVTyRSk+HwT+htxXK5PO7JxbY8Q6K6bICdXE9Zou7J5X5KtPtsTyNa3Oyi6qcRY4EjuH5qU+Bt7Xgaid7T3GJx+SxNhR5sS8nc2z6/wB1s60vJ1pf0UV6tHS/6PXiQuY1gc8BpJu9SSAN/h6qxgYOteeTTmR9FXhCsYPEAk1w9RzXNFzl+roqs1lpTSfL4+RX29GGtzkvP+tw9ApbKxoniZIO1p/eaaP18VL2hZmgf3LN9kGEYc3xleR6fNXyPVjbfRr6kQ/TOu6NkpFMqJXIbiKRTUSoAWhRQgNFMJJrQqNCSYQgkvOzt+3k7x8x8l6Jedn/AE0nef5nqy4YfQ64gktygE8dBa4bNnyShp0D9DfPgf8AfNXGylo5hc5ph95pvQ8O8LlXx7Hig8Msf6d1d11dPiumy9OTKfgJSyLKpb+3TtzYbe/Rlcdu64J5/wChwPpI9ddrSZoc3MevFR2oLwT/AP6GG9HyFdmCaa1LrpLzXR+oYIdRncF1xso0bY07VxwcobFnduYwuPcBZXzrEYyd73OJLnPJNBxuydw81pgyLHk1NdzzviXiVihGHWX2X+z6XsrEU8tvRw0/eH9l2DLxcQ/FmHm0r5adpz4eWnGRr4nascbpzTqNe5fUIcQHzYORmrZHRkH9V4+hWuaanljNIn4fn1wlBqmvz6OzG29FU+A7IcvllWrFvVL2lH22E7nehauG3ZniAiJ2R7nNAdqKANnXyHiufJvGPz+7PT8Pj8zJoXVr7FjFxSOJdlOvZuCv7GnJjLDds015Hd8/JeLwu0sYM+aNs/RtMji2w4MBAJ0GvlwKvezftOJcQ2Fwe0vzNHXztFAkXdVurxW2Txk8sfLljrimndfJpPg0/wDFyYXLJGWqrvj3+Xfc9TgYQTKPwzMd4Fr2/NeX9lQD0juPVvzIPqF6vZ5Oeft6O+z4l5j2cjyvxTfwzSDwzu+qzk6i16L7s50ld+/2Nx5OWhevLkuEbyxwdw493Fc5McGuIvQaajRD8VoCQesLBzHUWRfmCoxeNlji8aimuu7Tfzp1+xfL8NlOSyOVPatl790/qbmKZmicObSqOx48uHiHY8+Ody7bPxAfEavq23X09FDZv6CLtBP/AHOc75rPXeOvYaanuWColMpFYlxFIppFAKkItCAvppIVypIISTCAYXmG371ih+2bXcWNPzK9MvPxx5sbO3dmdEb7ejCmpOL081t79PqQXuj6QZWkZictcgB1netd66Y+APBe3e2m6feNiq576UYsfhY2yhkjC6IdI8vIjpl10hc6hk39YaaJtx2Gk6PLKw27LG26t4bn6oO85Wk9wK6cfw7Biw+Sotrq3y3XPp3XRbswWXI5ar3+i/OvyKONYRDI072/kV2x7Lwbx/8AHx+nSlR2hMx8cuR2d0bjE/mHgB1HwcPNd52k4Vw/6Bg8ckn9ljixPDB427pqva9vpSNnLVv+cGPLJWG7w1v+/AKWzPZ5pfBKQLtzyzLRaAeoSeZ3rtsnCNmjjzuDWMaHuJqqA4k6Aa34LWjx+EETnslhfGw5ZJBJHlZepL3XTdNdeylth8OnN5GrdpLt7vp7LujjzQ1zWrikYntL7ONxLxPEQ2ZzmtLj8LgAW3W7cB4BdfZfMRhGv+OOUsNiiCxx0rsFBajMZBKWdHLG9xD8ga5p+Gg8gdmdt94XHZz43TwyRODmve9xcNxcwFjvG2V3haTw1NSSrv8An39S0McVJyXXn19TP9pv02E//T+laELgGa11nAa7vHsWd7UfpcF3yf0LSc6GONkkxdWpprJJAADqSGNJA3WToo8OtTjfZ/c2nJx1NcksPAxpkkDW5ZOo0BoBcO2t96+AWW/YrYn54nPYGFji1ruqa5g9gF960pds4cPa3O052NkaYw6UuY7c+mA0z9Y0N/JQfjIA0uzjL0/u5oE3MXdHldQ35j81vPGp7Sj7bfn/AHcY804NtS9/X97+XZbFrBN1mPbH/UvPbPbWIxw5TD+IZvmvRYL/ABv3ovyesLZ7M+Mxzbq5Ydd9fZrgyXT086VXvexpGtr7lv3ISB27NbQBQtxO/wAhqrmN2ZHJG1m4xNoEfd03X5FdoJsM2R0TZY3zgX0eZpkpu+m9nZzXEbVwr2u+3hoEZgJGFoc54YASND13Ad5C18L8Px+Hw+Wk3stT7vvvxy6+TdlH4jJKeq65pXx/3rz9SjsjCuhdKwknOwO17P8AzXgruA/Qw/5Uf8oU5JYy+Rma5Y485bxbG/MG+BLD5Lns/wDQwf5MX8gXPPE8acW732vs0/tx7Ub+Y8ktUuep3KiUyksiRJEoKigBCEIDQQhCsUBNJCAksF+YY6TLWYtjIvdmy0L8VuLBxpy4wO/ZRO8nu+ivB0yJGO/BPnOGGKjxzgMHiI8VI+J+ZkrxE6osjesM0ZIyBzeqK30YvlxbpoJHjEYnCYTFMe3EOwz48S5r4JWPuINDnhrnM6waLs76te02hh3ua90ckgcWjK1r2tFi9xINb/RUIMLMQekkljO4ASMfYu7vLvXrebtwv+9vz3vY5tBl4VruixkhY9jZsXJKwSMdG90ZZG0EsdqNQd4C3wy4yOeHjb/Afqqu3HdRWsI/MD2Njb/AD81w5pXqfsawVUvc8/s/ETMwUj8O3NMIAWgN6Q/E3MQz7xDcxA4kBV8Zh2T4mbPLiDB7rAfe3Q5D7xDOXsJ+zDXZQ8X1dxo7le9kJKEY72Lex8cwD3MleTdhgbFfAUC7xOq6sOTTaS3t7/t6PijNxuvY8fDtCc4mHEYhr5cPA7EwNxUWGmHStexha8xNBdWZrm5gKNK9sHNHHhA9rmOL8Q7K9pa4NfLK5tg6jRwNHmtiKCY5XPmfobLS2LUXdW0eCz9svImhrg4f3U5ciaSrqvpb/n27JBQ5d/mxH2o/SYM/ryD0b9F1lfMJIifeDhRA+hhgXO956T/EDdS3LVX1d9rn7Wae6n9q4fwn6LSwzTJA9jSA69LLgNaPDXgVy+HlWm+qa+ppk5Z5HDYObD4aJ8bcVFtAQujETIHzQTBsshjjkOUsaBfxZmkA3updo4JwDC+CUSO2m3ElzWkwdEZGyFwk3aait+m5asuz8VT6MRkBbp7xMGganUVpv5cArOzcLKwvMuWzuyySSaAnfm41W7tXoTy23J1zf+vZdLt+phGFbIu4L/G/zGDyafqsXZLwNo4sc5ID/DXzC2MEeq885XejWrzeEkraeM7oneQafkvJf+T9l90dS4HiZZ5hgemE7sQMXGZoRh3CLDMOaOTK5rPhLXAXmN3ao7TjnEDsFhTJi8MyFjxmgdHLh+hnie2MPoCQlrX9Ws2i9ptaN7srgczK0aGAlpI33Y0OnBZE2GcToHAVVdGDf8XKx4r1P/qjGS47105b7dOm/vZgvDzktvuv5f8ABxws3S4rHYhjZRC7CYeMPkhlhzPY7EOcAJGgmg9vCtVo7LdcEB/YxjyaB8l1xOZuHkzEuPRu1IaDqN1DTTcuezhUMI5RM/lC83xMrlt6L6G+JbFgpFIlRJXKbDSKVqJKAaFG0KAaVotCFYoO0JICWSNYW2bGIjPAxEeTj9VvLC26PtI3dhb5UT/MPJaYlqlXoyk3SNSCUvjABp7K8uBXVkjiOs2lhQSO4EjuJC7CV7jq4+JK1jjkp6032a6OuG+3yq+pRyTVHTbdluit7LJyknm30Y0KnJGaBPMLQbKAHOO4DN4Af2Uzg1jYjK5I87sEFrSNQWzSejtCrHtVicQ10M8TpRCGlrxG74XXdubuOnMVos/BYh4caNhzrrfRNkrYZinj4TSvKDjJnPmxrNi021xuvT83O+wsXJNETIQ8A9WZoyCUHiW/dIIII5jiuONaDO2xdA13rtBO9xokhEbae4byRx3qyi5NF4/ohTdlb2oYXDD1wm/pcrezJcrtdxBB7BvvwVP2gm/QgVYJk9KH5lcYdpto5mm+zVZY4vRF+5pJrU0c8Vhp+ndTXlxfmBAppF773LdwzCGC7ujv3jsWS3bTNzWvA78oU5McSwuArztWcN7XJtlzvIkmuCxst0n2mYUzOS3t4O/ILz4jc3aeIdXVc2MX3M+pXotnS5mDu+f91S93qeRztz6rtoV8lXQ/MkvT+jLUtK9/7NvBzuMVNFyMGg/E1UMH0j5Q4F2hOeyS2qOld66ROqqNcirDsSToX+Gih45ucZKbSXK2p9vVNfiLRyKKark4bVNwTVxaR6Lnh2FrGNIota0EciBRChtHEgUwffNE8l2qtLvt5qmeDUdT7k43vXoBKiSmUiuWzYRKiSmUiFFgLQo0hLBq0oOlA4j81QLid5J9UWupYkY6i47EjvUPezyVZNW8uI1M7Gdx4rDx07nSHNo1lt77N35V5LX1XP3YPcQ6qeAO2x/ZawSVmc7pFaFpIsa9yn0Z4hd4dldA4ObNTCdY3NvTjWuiv5Wv3EHQOH7p4pN09naIjut9jPlktlcVy2xI7oGFo+Njm99FoPhqrWNZlArUk1XM8FxxcrWu6Nwc9rWNYfwjiQK1434rXHkj1Kzi+hk4KEgagg8uRWg1hVx+DDa31wuyRXAnjS7wwAancNb5Bc8p7mijsVsPE5pukNlBlu6rxKt4lucZGPynQmhqRwHYlFghG1zncASSfyW2Pj+Ck30PL4hzjM5pN5aYO7eF0dhncB6rRkweYPk6OnWCHChmAskdui6YUsf8JBrQjSwmed7x4GKNbMzWYKTg0+YWgyEiIhwrQ8QtGMsAOt0a7L5WqT2ST9Vw6NoPwg3fiqYoyb3pEzkl6nPZxytB0ytJvtOUmvRUoJftJAzg42CdQVbxDGtAjbrrmytBJzVQJ8P5iueycFbpXFrmlzz8V77N6963y8PT6fyUh01epaiLiupDgeBXHE4sxnKG0Rz4hVDtepA1253BYRxZJK0XeSCdMs7Shc9mjdRrYoLrs2zG2+7y0V625RejnC8vHyWVJiTDUYbZFk73akk1oqycpQd+hZUpKjQLUqWadrOG+P8AMJt2uOLD4G1z6Gbai/lSLVWG02cnDyR/xGLi6u8FRpfYWWMqFw/4hF+MeR+iFGn0FlrIokBYTZHDc4+ZXQYh/wCI/mu3SY2bFBRACzRjH9nkpDHu5BRTFmkB2lcsY1j2OY6wCN43tI1BB52qo2hzb6oONB4EKY2nYkrVEMTFK4UJNKA6xJrnrV+q4YfDYgOYXTtpgIFMIcAeTgtCPFR8T6LoJ4/xBW1tO0ZvEmVj0x+KQO5aEUeeicOCeLuY6mzQqzzOuqsl7TuLT3ELu8aDkpb1LcnTRXmie5paZXWR8Wlg8+9U8RhsV0eRuIb+8W9YeQ1V6tVKinmURoTMrCwYthv3kXYJOXMTVc927gr8s+IeGtEgY0Ek00kuPaSV2pJm9SsjexHlpblf3Z4N9M6+YFLNk2Cc7nskc0uNkA0DzGnArZkckHpHI4/4lnBS5MQbPxYOmIaG5g7IGdUEbu3gtJk2JAovZ4McP6lZL0iVHmyuyFjilRUjilOjpTXJoyj81OPDZCS11lwo2TXYRXFdw5cw7VSp07JcE1Rmu2dNZubMKIDXWQDwrkqsezcQ0lxyOkApr231eZ14rftO1ZeImouO2/oUeCDaf8mNHhJwc0j2ude8udr36K86CXT7UjTc0ml3e1SB0CznNzVM0hBRexU92cfikc5HujeRPiVYtK1lRpZxGGYPuj81IRt4AeSmSokoAoIRaEBQCZKELUoO01BNQSSATyqCLQgllRlStLMgAsCC08CR4lSBTtCRNe8bnu810bi5R9/zAULSQHYbQlH4SO0KTdpuG9g8CQq6VKOAWnbSB+6R4gptxzO0eCp0oFqA0ximH7w8bCmJWnc5vmFkFqWREgbNlc7WVlI3EjuNKbZHD7xUkGpaQKzxiXjjamMW7kFBJfKQVL3z9X1Uxi29qigWUiuPvLeaBO3mPNRRa0dUikJBzUrtARpCnlQq2CghIIWxmCdIUghJAhJTKVKARQmQkUAIQE0AkIpFIAQhCAaEkFCQtCSEICk6SCaAKRlQCmUAqRSLRaARCgWLpaRQHOlFznDc4jxXQqD0BDp5PxFJRypqtE2y4khCuVJJhNCBCQhCgkEihCAEIQgBJCEAICEIASQhAJAQhAAQhCAAmUIQCQhCASEIQCXNyEICCEIUA//Z"
+              width="100px"
+              alt=""
+            />
+          </div>
+          <div class="profile_photo_edit_image">
+            <button id="edit_image">Редактировать</button>
+          </div>
+          <div class="profile_optional">
+            <div class="_profile_optional_item">
+              <i class="fa-solid fa-arrow-up-right-dots"></i>
+              <h4>Посещаемость</h4>
+            </div>
+            <div class="_profile_optional_item">
+              <i class="fa-solid fa-hourglass-empty"></i>
+              <h4>Воспоминания</h4>
+            </div>
+            <div class="_profile_optional_item">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              <h4>Денежные переводы</h4>
+            </div>
+          </div>
+        </div>
+
+        <!--Блок с добавлением контакта-->
+        <div class="add">
+          <div class="add_item">
+            <i class="fa-solid fa-address-book"></i>
+            <h4>Укажите своих знакомых</h4>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <!--Блок с друзьями-->
+        <div class="friends">
+          <div class="friends_general">
+            <div class="caption">
+              <h4>Джентльмены<span class="number_of_friends">256</span></h4>
+              <h4 class="updates">Обновления</h4>
+            </div>
+            <div class="friends_items">
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Александр</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Олег</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Михаил</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Василий</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Кирилл</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Иван</a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="friends_general">
+            <div class="caption">
+              <h4>Друзья онлайн<span class="number_of_friends"> 19</span></h4>
+            </div>
+            <div class="friends_items">
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Олег</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Александр</a>
+              </div>
+              <div class="friends_item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HjQfYqYBsspqy-iV0-Cw5uHo-cH-3Tb
+							hbAugLXu7RnL9lmqiPZUkqBy-XpKfandg7FQ&usqp=CAU"
+                  alt=""
+                  class="friend_item_img"
+                /><a href="" class="friends_item_link"> Михаил</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Здесь заканчивается второй блок в main-->
+
+      <!--Здесь начинается контент-блок, который содержит в себе блок с подробной информацией профиля,
+	блок с альбомом (фотографии), блок с добавлением поста и блок с постами-->
+      <div class="content">
+        <!--Блок с подробной информацией о профиле-->
+        <div class="general">
+          <div class="general_header">
+            <h2>Danil Berezuev</h2>
+            <i class="fa-solid fa-code-branch"></i>
+            <span class="status">online</span>
+            <p class="bio">no bio yet</p>
+            <hr style="width: 100%" />
+          </div>
+          <div class="general_info">
+            <table>
+              <tbody>
+                <tr>
+                  <td>День рождения:</td>
+                  <td>18 мая 2006</td>
+                </tr>
+                <tr>
+                  <td>Город:</td>
+                  <td>Алматы</td>
+                </tr>
+                <tr>
+                  <td>Семейное положение:</td>
+                  <td>Не женат</td>
+                </tr>
+                <tr>
+                  <td>Место работы:</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td>Сайт</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="more">Показать подробную информацию</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr />
+          <div class="stats">
+            <div class="stats_item">
+              <h3>256</h3>
+              <span>друзей</span>
+            </div>
+            <div class="stats_item">
+              <h3>271</h3>
+              <span>подписчик</span>
+            </div>
+            <div class="stats_item">
+              <h3>33</h3>
+              <span>фотографии</span>
+            </div>
+            <div class="stats_item">
+              <h3>158</h3>
+              <span>видеозаписей</span>
+            </div>
+            <div class="stats_item">
+              <h3>27</h3>
+              <span>подарков</span>
+            </div>
+          </div>
+        </div>
+
+        <!--Блок с альбомом (фотографии)-->
+        <div class="album">
+          <div class="album_general">
+            <div class="caption">
+              <h4>Мои фотографии<span class="number_of_photos"> 33</span></h4>
+              <h4 class="updates">показать на карте</h4>
+            </div>
+            <div class="album_items">
+              <div class="album_item">
+                <img
+                  src="https://static-cse.canva.com/blob/847064/29.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="album_item">
+                <img
+                  src="http://www.rosphoto.com/images/u/articles/1510/7_5.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="album_item">
+                <img
+                  src="https://www.interfax.ru/ftproot/photos/photostory/2022/04/29/week/zah.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="album_item">
+                <img
+                  src="http://www.rosphoto.com/images/u/articles/1510/4_8.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Блок с добавлением поста-->
+        <div class="add_post">
+          <div class="add_post_wrapper">
+            <div class="image_block">
+              <img
+                src="https://cdn.vox-cdn.com/thumbor/ZMj6Vc-8npX4__ELeaOhkyQje6w=/1400x1400/filters:format(jpeg)/cd
+				n.vox-cdn.com/uploads/chorus_asset/file/13096581/BoJack_Horseman_S05E01_21m31s30960f.jpg"
+                alt=""
+              />
+            </div>
+            <div class="input_field">
+              <label for="kek"></label>
+              <input type="text" placeholder="Что у вас нового?" id="kek" />
+            </div>
+            <div class="add_post_media">
+              <i class="fa-solid fa-camera"></i>
+              <i class="fa-solid fa-video"></i>
+              <i class="fa-solid fa-music"></i>
+              <i class="fa-solid fa-list"></i>
+            </div>
+            <div class="add_post_options">
+              <i class="fa-solid fa-lightbulb"></i>
+              <i class="fa-solid fa-lock"></i>
+            </div>
+          </div>
+        </div>
+
+        <!--Блок со всеми постами-->
+        <div class="content_bottom">
+          <div class="content_wrapper">
+            <div class="content_nav">
+              <div class="content_nav_items">
+                <div class="all_posts">Все записи</div>
+                <div class="my_posts">Мои записи</div>
+                <div class="archive">Архив записей</div>
+              </div>
+              <a href="#"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="main_content"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
